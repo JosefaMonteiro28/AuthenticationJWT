@@ -13,7 +13,7 @@ namespace AuthenticationJWT.Application
             {
                 var user = db.User.FirstOrDefault(x => x.UserName == username);
                 if (user == null)
-                    return res;
+                    return res.Bad("There is no user");
 
                 if (user.Password == password)
                 {

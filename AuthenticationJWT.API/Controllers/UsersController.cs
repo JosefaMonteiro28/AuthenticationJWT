@@ -42,13 +42,13 @@ namespace AuthenticationJWT.API.Controllers
                 var token = TokenGenerator.GenerateTokenJwt(user.ID, user.UserName);
 
                 tokenToReturn.Token = token;
+                tokenToReturn.Message = "Good";
 
                 return Ok(tokenToReturn);
             }
             else
             {
-                tokenToReturn.Message = "credênciais erradas";
-                return Ok(tokenToReturn);
+                return BadRequest(tokenToReturn.Message = "Wrong credentials");
             }
         }
     }

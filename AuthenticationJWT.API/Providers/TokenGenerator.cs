@@ -21,7 +21,6 @@ namespace AuthenticationJWT.API.Providers
             // create a claimsIdentity
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(new[]
             {
-                //new Claim(ClaimTypes.NameIdentifier, idRegiao.ToString()),
                 new Claim(ClaimTypes.Name,username),
             });
            
