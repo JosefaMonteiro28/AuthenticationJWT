@@ -1,5 +1,5 @@
 # AuthenticationJWT
-this project shows how to do authentication jason web token
+Este projecto mostra a autenticação via jwt
 
 ## Tecnologia
 Este projeto usa a seguinte tecnologia:
