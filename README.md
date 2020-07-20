@@ -14,6 +14,9 @@ Inicialmente tenho uma única branch, a master, porém se haver necessidade de a
 ### API
 A documentacção da API é feita utilizando o Swagger.
 
-## Contribuição
-#### Equipa
+## Contribuições
 * Josefa Monteiro
+* Evandre Da Silva
+* Alexandre Juca
+
+
