@@ -17,6 +17,6 @@ A documentacção da API é feita utilizando o Swagger.
 ## Contribuições
 * Josefa Monteiro
 * Evandre Da Silva
-* Alexandre Juca
+* Alexandre Juca (Com a abertura de uma issue)
 
 
