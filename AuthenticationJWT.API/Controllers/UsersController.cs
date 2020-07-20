@@ -4,6 +4,7 @@ using AuthenticationJWT.Application;
 using AuthenticationJWT.Data;
 using System.Net;
 using System.Web.Http;
+using System.Web.UI.WebControls;
 
 namespace AuthenticationJWT.API.Controllers
 {
@@ -21,7 +22,7 @@ namespace AuthenticationJWT.API.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public IHttpActionResult Login(Login login)
+        public IHttpActionResult Login(LoginRequest login)
         {
             if (login == null)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -30,25 +31,22 @@ namespace AuthenticationJWT.API.Controllers
 
             var tokenToReturn = new TokenToReturn
             {
-                Token = "",
-                Message = ""
+                Token = ""
             };
 
             if (res.Success)
             {
-
                 var user = (User)res.Object;
 
                 var token = TokenGenerator.GenerateTokenJwt(user.ID, user.UserName);
 
                 tokenToReturn.Token = token;
-                tokenToReturn.Message = "Good";
 
-                return Ok(tokenToReturn);
+                return Content(HttpStatusCode.OK, tokenToReturn.Token);
             }
             else
             {
-                return BadRequest(tokenToReturn.Message = "Wrong credentials");
+                return Content(HttpStatusCode.Unauthorized, "Wrong Crendencials");
             }
         }
     }
